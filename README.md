@@ -53,6 +53,9 @@ pswitcher:
 
 ```
 
+demo
+-----------------------------
+[mp4](https://github.com/ybrs/project-switcher/blob/master/demo.mp4?raw=true)
 
 
 
