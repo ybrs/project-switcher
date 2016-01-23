@@ -1,0 +1,10 @@
+chroma:
+    start:
+        - iterm: |
+            cd ~/projects/chroma
+            cd source/env/bin/activate
+            python app.py
+    tearDown:
+        - iterm:
+            ctrl-c
+            exit
