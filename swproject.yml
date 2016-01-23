@@ -1,9 +1,20 @@
 chroma:
     start:
         - iterm: |
-            cd ~/projects/chroma
-            cd source/env/bin/activate
+            cd /Users/aybarsbadur/projects/hipo/chroma/api/
+            pyc `pwd`
+        - iterm: |
+            cd /Users/aybarsbadur/projects/hipo/chroma/api/
+            source ./env/bin/activate
             python app.py
+        - iterm: |
+            cd /Users/aybarsbadur/Downloads/neo4j-enterprise-2.3.1
+            ./bin/neo4j console
+        - iterm: |
+            cd /Users/aybarsbadur/Downloads/elasticsearch-2.1.0
+            ./bin/elasticsearch
+        - chrome:
+            open: http://localhost:8080/
     tearDown:
         - iterm:
             ctrl-c
