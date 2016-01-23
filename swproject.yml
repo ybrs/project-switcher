@@ -1,21 +1,31 @@
 chroma:
     start:
-        - iterm: |
-            cd /Users/aybarsbadur/projects/hipo/chroma/api/
-            pyc `pwd`
-        - iterm: |
-            cd /Users/aybarsbadur/projects/hipo/chroma/api/
-            source ./env/bin/activate
-            python app.py
-        - iterm: |
-            cd /Users/aybarsbadur/Downloads/neo4j-enterprise-2.3.1
-            ./bin/neo4j console
-        - iterm: |
-            cd /Users/aybarsbadur/Downloads/elasticsearch-2.1.0
-            ./bin/elasticsearch
-        - chrome:
-            open: http://localhost:8080/
-    tearDown:
-        - iterm:
-            ctrl-c
-            exit
+#        - iterm: |
+#            cd /Users/aybarsbadur/projects/hipo/chroma/api/
+#            pyc `pwd`
+#        - iterm: |
+#            cd /Users/aybarsbadur/projects/hipo/chroma/api/
+#            source ./env/bin/activate
+#            python app.py
+#        - iterm: |
+#            cd /Users/aybarsbadur/Downloads/neo4j-enterprise-2.3.1
+#            ./bin/neo4j console
+#        - iterm: |
+#            cd /Users/aybarsbadur/Downloads/elasticsearch-2.1.0
+#            ./bin/elasticsearch
+#        - chrome:
+#            open: http://localhost:8080/
+
+        - itermocil:
+            windows:
+              - name: sample-two-panes
+                root: /Users/aybarsbadur/projects/hipo/chroma/api
+                layout: even-horizontal
+                panes:
+                  - source env/bin/activate && STORM_SETTINGS_MODULE="chroma.settings" PYTHONPATH=`pwd` kuyruk -m kuyruk_config worker
+                  - echo "hello"
+
+#    tearDown:
+#        - iterm:
+#            ctrl-c
+#            exit

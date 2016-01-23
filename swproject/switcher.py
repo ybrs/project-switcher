@@ -29,7 +29,7 @@ def run_iterm(lines):
         osascript <<-EOF
         tell application "iTerm"
             activate
-            make new terminal
+            set nterminal to (make new terminal)
             tell the current terminal
                 activate current session
                 launch session "Default Session"
@@ -38,6 +38,7 @@ def run_iterm(lines):
                 end tell
             end tell
         end tell
+        return nterminal
         EOF
     """.format(lines=' && '.join(ll))
     print myscript
@@ -47,6 +48,25 @@ def run_iterm(lines):
                      stderr=subprocess.PIPE)
     (output, error) = proc.communicate()
     print output
+    print error
+
+def run_itermocil(v):
+    print "-------"
+    s = yaml.dump(v)
+    f = open('/tmp/project-switcher-itermocil.yml', 'w')
+    f.write(s)
+    f.close()
+    print "-------"
+    myscript = """
+        /Users/aybarsbadur/projects/project-switcher/env/bin/itermocil --layout /tmp/project-switcher-itermocil.yml
+    """
+
+    proc = subprocess.Popen(myscript,
+                     shell=True,
+                     stdout=subprocess.PIPE,
+                     stderr=subprocess.PIPE)
+    (output, error) = proc.communicate()
+
 
 def run(fname, projectname):
     f = open(fname)
@@ -63,6 +83,8 @@ def run(fname, projectname):
                 run_iterm(lines)
             if k == 'chrome':
                 run_chrome(v['open'])
+            if k == 'itermocil':
+                run_itermocil(v)
 
 
 if __name__ == '__main__':
