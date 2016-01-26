@@ -86,8 +86,15 @@ def run(fname, projectname):
             if k == 'itermocil':
                 run_itermocil(v)
 
+def main():
+    try:
+        fname = sys.argv[1]
+        run(fname, sys.argv[2])
+    except:
+        print """
+        usage:
+            swproject config.yml project_name
+        """
 
 if __name__ == '__main__':
-    fname = sys.argv[1]
-    print "opening fname", fname
-    run(fname, sys.argv[2])
+    main()

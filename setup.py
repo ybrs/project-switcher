@@ -14,8 +14,13 @@ setup(
     url="https://github.com/ybrs/project-switcher",
     author_email='aybars.badur@gmail.com',
     packages=['swproject'],
-    # install_requires=['pyperclip'],
-    # scripts=['./swproject/switcher.py'],
+    dependency_links = ['https://github.com/TomAnthony/itermocil/archive/master.zip#egg=itermocil-0.1.8'],
+    install_requires = ['itermocil'],
+    entry_points={
+          'console_scripts': [
+              'swproject = swproject.switcher:main'
+          ]
+    },
     classifiers = [
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
