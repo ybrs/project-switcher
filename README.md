@@ -61,6 +61,11 @@ virtualenv env
 source env/bin/activate
 pip install swproject
 ```
+now create a yaml file like the above
+```
+swproject projects.yml projectname
+```
+
 
 pypi
 ---------------------------
