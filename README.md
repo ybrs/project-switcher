@@ -53,6 +53,21 @@ pswitcher:
 
 ```
 
+installation
+----------------------------
+you can install it from pypi as expected.
+```
+virtualenv env
+source env/bin/activate
+pip install swproject
+```
+
+pypi
+---------------------------
+https://pypi.python.org/pypi/swproject/0.1.1
+
+
+
 demo
 -----------------------------
 [mp4](https://github.com/ybrs/project-switcher/blob/master/demo.mp4?raw=true)

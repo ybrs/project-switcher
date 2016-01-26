@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
-from setuptools import setup, find_packages
+# from setuptools import setup, find_packages
+from distutils.core import setup
 
 VERSION = '0.1.1'
 DESCRIPTION = 'hassle free project switching'
