@@ -101,7 +101,7 @@ or
 - run celery worker
 
 
-well project switcher tries to automate this process, using a simple yaml file.
+well project switcher tries to automate this process, using a simple yaml file. Project-switcher is currently MACOSX only.
 
 usage
 ------------------------------
